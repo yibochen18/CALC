@@ -1,6 +1,5 @@
-import java.util.Scanner;
-import java.util.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){ //user input section
@@ -21,6 +20,11 @@ public class Main {
             int end = input.nextInt();
             Course newCourse = new Course(name,credits,start,end);
             courses.add(newCourse);
+        }
+        Schedule dailySchedule = new Schedule(courses);
+        ArrayList<TimeBlock> timeBlocks = dailySchedule.getTimeBlocks();
+        for (TimeBlock tb : timeBlocks) {
+            System.out.println(tb.getStartTime() + ":" + tb.getEndTime() + "\n" + tb.getName());
         }
     }
 }
