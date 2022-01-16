@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main { //putting everything together
     public static void main(String[] args){ //user input section
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of courses you have: ");
