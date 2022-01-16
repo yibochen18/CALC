@@ -12,6 +12,11 @@ public class TimeBlock {
         name = "break";
     }
 
+    public TimeBlock(int length,int start, int end ){
+        startTime = start;
+        endTime = start + length;
+    }
+
     // EFFECTS: constructs a time block with start and end time and name
     public TimeBlock(String name, int start, int end) {
         startTime = start;
@@ -30,6 +35,18 @@ public class TimeBlock {
     public String getName() {
         return name;
     }
+
+     public void setStartTime(int start){
+        startTime = start;
+     }
+
+     public void setEndTime(int end){
+         endTime = end;
+     }
+
+     public void setName(String name){
+        this.name = name;
+     }
 
     @Override
     public boolean equals(Object o) {

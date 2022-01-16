@@ -59,5 +59,62 @@ public class Schedule {
                 timeBlocks.add(new TimeBlock(i, i + 1));
         }
     }
-}
+
+    //fills schedule with study blocks
+    private void studyBlocks(ArrayList<Course> courses){
+        //1-2 credits = 1hr
+        // 3-4 credits = 2hr
+        //5-6 credits = 3hr
+
+        Schedule studysched = new Schedule(courses);
+
+        for (Course c0rse : courses ) {
+                int credits = c0rse.getCourse_credit();
+                int hours=0;
+                int iterate = 0;
+                if(credits < 2){
+                    hours =1;
+                    for(int i = 0; i<hours;i++) {
+                        for (TimeBlock tb : timeBlocks) {
+                            if (tb.getName() == "break") {
+                                tb.setName("study");
+                            }
+                        }
+                    }
+                }
+                if(credits > 2 && credits <= 4){
+                    hours = 2;
+                    for(int i = 0; i<hours;i++) {
+                        for (TimeBlock tb : timeBlocks) {
+                            if (tb.getName() == "break") {
+                                tb.setName("study");
+                            }
+                        }
+                    }
+                }
+                if(credits >4 && credits <=6 ){
+                    hours = 3;  for(int i = 0; i<hours;i++) {
+                        for (TimeBlock tb : timeBlocks) {
+                            if (tb.getName() == "break") {
+                                tb.setName("study");
+                            }
+                        }
+                    }
+                }
+
+
+
+        }
+
+
+        }
+
+
+
+
+
+
+    }
+
+
 

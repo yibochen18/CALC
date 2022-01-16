@@ -1,6 +1,5 @@
-import java.util.Scanner;
-import java.util.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){ //user input section
@@ -22,6 +21,8 @@ public class Main {
             Course newCourse = new Course(name,credits,start,end);
             courses.add(newCourse);
         }
+
+
     }
 }
 
