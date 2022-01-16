@@ -61,12 +61,17 @@ public class Schedule {
     }
 
     //fills schedule with study blocks
-    private void studyBlocks(ArrayList<Course> courses){
+    public void studyBlocks(ArrayList<Course> courses){
         //1-2 credits = 1hr
         // 3-4 credits = 2hr
         //5-6 credits = 3hr
 
         Schedule studysched = new Schedule(courses);
+
+        for(int i = 0; i<7; i++){
+            timeBlocks.get(i).setName("sleep");
+        }
+
 
         for (Course c0rse : courses ) {
                 int credits = c0rse.getCourse_credit();
@@ -74,46 +79,48 @@ public class Schedule {
                 int iterate = 0;
                 if(credits < 2){
                     hours =1;
-                    for(int i = 0; i<hours;i++) {
-                        for (TimeBlock tb : timeBlocks) {
+                    int studyBlocks = 0;
+                    for (TimeBlock tb : timeBlocks) {
+                        if (studyBlocks != hours) {
                             if (tb.getName() == "break") {
                                 tb.setName("study");
+                                studyBlocks++;
                             }
+                        } else {
+                            break;
                         }
                     }
                 }
                 if(credits > 2 && credits <= 4){
                     hours = 2;
-                    for(int i = 0; i<hours;i++) {
-                        for (TimeBlock tb : timeBlocks) {
+                    int studyBlocks = 0;
+                    for (TimeBlock tb : timeBlocks) {
+                        if (studyBlocks != hours) {
                             if (tb.getName() == "break") {
                                 tb.setName("study");
+                                studyBlocks++;
                             }
+                        } else {
+                            break;
                         }
                     }
                 }
                 if(credits >4 && credits <=6 ){
-                    hours = 3;  for(int i = 0; i<hours;i++) {
-                        for (TimeBlock tb : timeBlocks) {
+                    hours = 3;
+                    int studyBlocks = 0;
+                    for (TimeBlock tb : timeBlocks) {
+                        if (studyBlocks != hours) {
                             if (tb.getName() == "break") {
                                 tb.setName("study");
+                                studyBlocks++;
                             }
+                        } else {
+                            break;
                         }
                     }
                 }
-
-
-
         }
-
-
         }
-
-
-
-
-
-
     }
 
 

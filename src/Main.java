@@ -21,6 +21,14 @@ public class Main {
             Course newCourse = new Course(name,credits,start,end);
             courses.add(newCourse);
         }
+     Schedule shced =  new Schedule(courses);
+        shced.studyBlocks(courses);
+        ArrayList<TimeBlock> shced2 = shced.getTimeBlocks();
+        for(TimeBlock tb : shced2){
+            System.out.println(tb.getStartTime());
+            System.out.println(tb.getEndTime());
+            System.out.println(tb.getName());
+        }
 
 
     }
