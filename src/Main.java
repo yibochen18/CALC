@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args){ //user input section
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of courses you have: ");
         int num_course = sc.nextInt();
